@@ -10,7 +10,7 @@ from config import Config
 import wget
 
 Jebot = Client(
-   "AnyDL Bot",
+   "YouTube Download",
    api_id=Config.APP_ID,
    api_hash=Config.API_HASH,
    bot_token=Config.TG_BOT_TOKEN,
@@ -18,7 +18,7 @@ Jebot = Client(
 
 YTDL_REGEX = (r"^((?:https?:)?\/\/)"
               r"?((?:www|m)\.)"
-              r"?((?:youtube\.com|youtu\.be|xvideos\.com|pornhub\.com"
+              r"?((?:youtube\.com|youtu\.be"
               r"|xhamster\.com|xnxx\.com))"
               r"(\/)([-a-zA-Z0-9()@:%_\+.~#?&//=]*)([\w\-]+)(\S+)?$")
 s2tw = OpenCC('s2tw.json').convert
@@ -29,9 +29,9 @@ async def start(client, message):
    if message.chat.type == 'private':
        await Jebot.send_message(
                chat_id=message.chat.id,
-               text="""<b>Hey There, I'm AnyDL Bot
+               text="""<b>Hey There, welcome to YouTube Download Bot
 
-I can download video or audio from Youtube, Pornhub and Xhamster. Made by @JEBotZ.
+I can download video or audio from Youtube. Developed by @Andre_Ribas and maintained by @ARNextRobot
 
 Hit help button to find out more about how to use me</b>""",   
                             reply_markup=InlineKeyboardMarkup(
@@ -39,10 +39,10 @@ Hit help button to find out more about how to use me</b>""",
                                         InlineKeyboardButton(
                                             "Help", callback_data="help"),
                                         InlineKeyboardButton(
-                                            "Channel", url="https://t.me/Infinity_BOTs")
+                                            "Channel", url="https://t.me/ARNextRobot")
                                     ],[
                                       InlineKeyboardButton(
-                                            "Source Code", url="https://github.com/ImJanindu/AnyDL-Bot")
+                                            "Support Group", url="https://t.me/ARNextRobotGroup")
                                     ]]
                             ),        
             disable_web_page_preview=True,        
@@ -53,11 +53,11 @@ async def help(client, message):
     if message.chat.type == 'private':   
         await Jebot.send_message(
                chat_id=message.chat.id,
-               text="""<b>AnyDL Bot Help!
+               text="""<b>YouTube Download Bot Help!
 
-Just send a Youtube, Pornhub or Xhamster video url to download it in video or audio format!
+Just send a Youtube video url to download it in video or audio format!
 
-Join @Infinity_BOTs</b>""",
+Developed by @Andre_Ribas</b>""",
         reply_markup=InlineKeyboardMarkup(
                                 [[
                                         InlineKeyboardButton(
@@ -66,7 +66,7 @@ Join @Infinity_BOTs</b>""",
                                             "About", callback_data="about"),
                                   ],[
                                         InlineKeyboardButton(
-                                            "Source Code", url="https://github.com/ImJanindu/AnyDL-Bot")
+                                            "Support Group", url="https://t.me/ARNextRobotGroup")
                                     ]]
                             ),        
             disable_web_page_preview=True,        
@@ -77,21 +77,21 @@ async def about(client, message):
     if message.chat.type == 'private':   
         await Jebot.send_message(
                chat_id=message.chat.id,
-               text="""<b>About AnyDL Bot!</b>
+               text="""<b>About YouTube Download Bot!</b>
 
-<b>♞ Developer:</b> <a href="https://t.me/ImJanindu">Jason</a>
+<b>♞ Developer:</b> <a href="https://t.me/Andre_Ribas">André Ribas</a>
 
-<b>♞ Support:</b> <a href="https://t.me/InfinityBOTs_Support">Infinity BOTs Support</a>
+<b>♞ Support:</b> <a href="https://t.me/ARNextRobotContact">ARNext Robot Contact</a>
 
-<b>♞ Library:</b> <a href="https://github.com/pyrogram/pyrogram">Pyrogram</a>
+<b>♞ Support Group:</b> <a href="https://t.me/ARNextRobotGroup">ARNext Robot Group</a>
 
-<b>Join @Infinity_BOTs</b>""",
+<b>Join @ARNextRobot</b>""",
      reply_markup=InlineKeyboardMarkup(
                                 [[
                                         InlineKeyboardButton(
                                             "Back", callback_data="help"),
                                         InlineKeyboardButton(
-                                            "Source Code", url="https://github.com/ImJanindu/AnyDL-Bot")
+                                            "More information (WebSite)", url="https://ARNext.xyz/YouTubeDownloadNextBot")
                                     ]]
                             ),        
             disable_web_page_preview=True,        
@@ -111,7 +111,7 @@ async def ytdl_with_button(c: Client, message: Message):
             if user.status == "kicked":
                 await c.send_message(
                     chat_id=message.chat.id,
-                    text="Sorry, You are Banned to use me. Contact my [Support Group](https://t.me/InfinityBots_Support).",
+                    text="Sorry, You are Banned to use me. Contact my [Support Group](https://t.me/ARNextRobotGroup).",
                     parse_mode="markdown",
                     disable_web_page_preview=True
                 )
@@ -119,7 +119,7 @@ async def ytdl_with_button(c: Client, message: Message):
         except UserNotParticipant:
             await c.send_message(
                 chat_id=message.chat.id,
-                text="**Please Join My Updates Channel to use me 😉**",
+                text="**Please join my Updates Channel to use me 😉**",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
@@ -133,7 +133,7 @@ async def ytdl_with_button(c: Client, message: Message):
         except Exception:
             await c.send_message(
                 chat_id=message.chat.id,
-                text="Something went Wrong. Contact my [Support Group](https://t.me/InfinityBots_Support).",
+                text="Something went Wrong. Contact my [Support Group](https://t.me/ARNextRobotGroup).",
                 parse_mode="markdown",
                 disable_web_page_preview=True)
             return
@@ -352,7 +352,7 @@ async def button(bot, update):
 print(
     """
 Bot Started!
-Join @Infinity_BOTs
+Join @ARNextRobot
 """
 )
 
