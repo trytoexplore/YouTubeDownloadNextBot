@@ -29,9 +29,9 @@ async def start(client, message):
    if message.chat.type == 'private':
        await Jebot.send_message(
                chat_id=message.chat.id,
-               text="""<b>Hey There, welcome to YouTube Download Bot
+               text="""<b>Hey There, Welcome to YouTube Downloader Bot
 
-I can download video or audio from Youtube. Developed by @Andre_Ribas and maintained by @ARNextRobot
+I can download video or audio from Youtube.Made by @LG_Bot_Updates
 
 Hit help button to find out more about how to use me</b>""",   
                             reply_markup=InlineKeyboardMarkup(
@@ -39,7 +39,7 @@ Hit help button to find out more about how to use me</b>""",
                                         InlineKeyboardButton(
                                             "Help", callback_data="help"),
                                         InlineKeyboardButton(
-                                            "Channel", url="https://t.me/ARNextRobot")
+                                            "Channel", url="https://t.me/LG_Bot_Updates")
                                     ],[
                                       InlineKeyboardButton(
                                             "Support Group", url="https://t.me/ARNextRobotGroup")
@@ -57,7 +57,7 @@ async def help(client, message):
 
 Just send a Youtube video url to download it in video or audio format!
 
-Developed by @Andre_Ribas</b>""",
+Made by @LG_Bot_Updates</b>""",
         reply_markup=InlineKeyboardMarkup(
                                 [[
                                         InlineKeyboardButton(
@@ -79,13 +79,13 @@ async def about(client, message):
                chat_id=message.chat.id,
                text="""<b>About YouTube Download Bot!</b>
 
-<b>♞ Developer:</b> <a href="https://t.me/Andre_Ribas">André Ribas</a>
+<b>♞ Developer:</b> <a href="https://t.me/LG_Bot_Updates">LG Bots Owner</a>
 
-<b>♞ Support:</b> <a href="https://t.me/ARNextRobotContact">ARNext Robot Contact</a>
+<b>♞ Bot Updates:</b> <a href="https://t.me/LG_Bot_Updates">LG Bot Updates</a>
 
-<b>♞ Support Group:</b> <a href="https://t.me/ARNextRobotGroup">ARNext Robot Group</a>
+<b>♞ Support Group:</b> <a href="https://t.me/ARNextRobotGroup">LG Bots Support</a>
 
-<b>Join @ARNextRobot</b>""",
+<b>Join @LG_Bot_Updates</b>""",
      reply_markup=InlineKeyboardMarkup(
                                 [[
                                         InlineKeyboardButton(
